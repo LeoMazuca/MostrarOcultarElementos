@@ -4,8 +4,8 @@ const container = document.getElementById("container");
 
 const toggleSideBar = ()=> document.body.classList.toggle("show-nav");
 
-toggle.addEventListener("click", toggleSideBar);
-/* 
+/*toggle.addEventListener("click", toggleSideBar);*/
+
 let estado=0;
 toggle.addEventListener("click", ()=>{
 	if (estado == 0) {
@@ -21,7 +21,7 @@ toggle.addEventListener("click", ()=>{
 		container.className = "container";
 		estado = 0;
 	}	
-}) */
+}) 
 	
 const close = document.getElementById("close");
 const open = document.getElementById("open");
