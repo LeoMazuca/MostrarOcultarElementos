@@ -1,0 +1,265 @@
+:root{
+	--primary-color:  #02010a;
+	--secondary-color: #04052e;
+	--tertiary-color: #140152;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--tertiary-color) inset !important;
+    -webkit-text-fill-color: black !important;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: var(--secondary-color);
+	transition: transform .5s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/*align-items: center;*/
+}
+body.show-nav{
+	transform: translate(20%);
+}
+hr{
+	width: 100%;
+	margin-bottom: 10px;
+}
+nav{
+	/*background-color: var(--secondary-color);	*/
+	background-image: linear-gradient(180deg, #02010a 0%, #04052e 100%);
+	border-right: 3px solid var(--tertiary-color);
+	color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 20%;
+	min-height: 100%;
+	z-index: 10;
+	transform: translate(-100%);
+}
+nav .avatar{
+	padding: 30px 0px;
+	text-align: center;
+}
+nav .avatar img{
+	border-radius: 50%;
+	border:5px solid var(--tertiary-color);
+}
+nav ul{
+	list-style-type: none;
+}
+nav ul li {
+    padding: 30px;
+    text-align: center;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1rem;
+}
+nav ul li:hover{
+	background-color: var(--tertiary-color);
+	cursor: pointer;
+}
+header{
+	background-color: var(--primary-color);
+	color: var(--tertiary-color);
+	font-size: 1.2rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px;
+	transition: width .5s;
+}
+.header-reducido{
+	width: 80%;
+	animation: ease-in-out;
+	animation-duration: 2s;
+}
+.header-normal{
+	width: 100%;
+	animation-duration: 2s;
+}
+.container-reducido{
+	color: black;
+	font-size: 1.3rem;
+	padding: 3rem;
+	width: 80%;
+	max-width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	height: 100vh;
+	transition: all ease-in-out .5s;
+}
+header .welcome{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 0.7;
+}
+header .toggle .fas{
+	transition: all 2s;
+}
+header .welcome h1, p{
+    text-align: center;    
+}
+button, input[type="submit"]{
+	background-color: var(--secondary-color);
+	border: 0;
+	border-radius: 10px;
+	color: var(--tertiary-color);
+	font-weight: bolder;
+	cursor: pointer;
+	padding: 10px;
+}
+button:focus{
+    outline: none;
+}
+.container{
+	color: black;
+	font-size: 1.2rem;
+	padding: 3rem;
+	margin: 0 auto;
+	width: 80%;
+	max-width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: all ease-in-out .5s;
+	
+}
+.container ul li{
+	list-style-type: none;
+}
+.fa-check{
+	color: green;
+	margin-right: .5rem;
+	font-size: 1.3rem;
+}
+.modal-container{
+	background-color: rgba(0, 0, 0, .3);
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: var(--tertiary-color);
+}
+.container > h2{
+	text-align: center;
+	padding: 12px;
+}
+.container > p{
+	text-align: justify;
+}
+.container > ul li{
+	margin-bottom: 3px;
+}
+.modal-container.show-modal{
+    display: block;
+}
+.modal{
+	background-color: var(--secondary-color);
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	position: relative;
+	top: 45%;
+	left: 50%;
+	width: 500px;
+	transform: translate(-50%, -50%);
+	animation-name: modalOpen;
+	animation-duration: 2s;
+	border: 1px var(--tertiary-color) solid;
+}
+@keyframes modalOpen{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+.modal > button{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+.modal-header{
+	background-color: var(--primary-color);
+	padding: 20px;
+	font-size: 1.5rem;
+}
+.modal-content{
+	padding: 20px;
+}
+.modal-form{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-form div{
+	width: 90%;
+	margin-top: 10px;
+	text-align: center;
+}
+.modal-form label{
+	display: block;
+	margin-bottom: 5px;
+}
+.modal-form .modalForm-input{
+	padding: 8px;
+	width: 100%;
+	align-self: center;
+	background-color: var(--tertiary-color);
+	border: none;
+	border-radius: 5px;
+	height: 3rem;
+	margin: 10px;
+	font-size: 1.2rem;
+}
+.modal-form .submit-btn{
+	background-color: var(--tertiary-color);
+	margin-top: 10px;
+	color: var(--secondary-color);
+	font-size: 1.5rem;
+}
+.modal-form .submit-btn:hover{
+	background-color: var(--primary-color);
+}
+.modal-form .modalForm-input:focus{
+	outline: none;
+}
+.modal-formDiv{
+	position: relative;
+}
+.modal-form small{
+	color: red;
+	position: absolute;
+	left: 0;
+	margin:-4px 13px;	
+	visibility: hidden;
+}
+.modal-formDiv.error small{
+	visibility: visible;
+}
+.error .modalForm-input{
+	border: 1px solid red;
+}
+.ok .modalForm-input{
+	border: 1px solid green;
+}
